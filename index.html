@@ -18,6 +18,24 @@
 <script src="js/jquery.poptrox.min.js"></script>
 <script src="js/skel.min.js"></script>
 <script src="js/init.js"></script>
+
+<script type="text/javascript">
+function submitEmail(){
+  var body = document.getElementById('message').value;
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var href = "mailto:" + address + "?"
+         + "subject=Email-from-" + name "&"
+         + "body=" + body;
+var wndMail;
+wndMail = window.open(href, "_blank", "scrollbars=yes,resizable=yes,width=10,height=10");
+if(wndMail)
+{
+    wndMail.close();    
+}
+}
+</script>
+
 <noscript>
 	<link rel="stylesheet" href="css/skel-noscript.css" />
 	<link rel="stylesheet" href="css/style.css" />
@@ -163,24 +181,16 @@
 			<p>Let's chat.</p>
 		</header>
 
-
-		<form action="MAILTO:someone@example.com" method="post"
-			enctype="text/plain">
-			Name:<br> <input type="text" name="name" value="your name"><br>
-			E-mail:<br> <input type="text" name="mail" value="your email"><br>
-			Comment:<br> <input type="text" name="comment"
-				value="your comment" size="50"><br>
-			<br> <input type="submit" value="Send"> <input
-				type="reset" value="Reset">
-		</form>
-
-		<form>
+		<form id="emailForm" method="post">
+			<input type="hidden" name="command" value="" />
 			<div class="row half">
 				<div class="6u">
-					<input id="name" type="text" class="text" name="name" placeholder="Name" />
+					<input id="name" type="text" class="text" name="name"
+						placeholder="Name" />
 				</div>
 				<div class="6u">
-					<input id="email" type="text" class="text" name="email" placeholder="Email" />
+					<input id="email" type="text" class="text" name="email"
+						placeholder="Email" />
 				</div>
 			</div>
 			<div class="row half">
@@ -191,7 +201,8 @@
 			<div class="row">
 				<div class="12u">
 					<ul class="actions">
-						<li><a href="mailto:michael.speed@southwales.ac.uk?body=<script>document.getElementById('message')</script>" class="button form">Send Message</a></li>
+						<li><a href="javascript:sumbitEmail()" class="button form">Send
+								Message</a></li>
 					</ul>
 				</div>
 			</div>
