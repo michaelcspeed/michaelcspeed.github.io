@@ -19,23 +19,6 @@
 <script src="js/skel.min.js"></script>
 <script src="js/init.js"></script>
 
-<script type="text/javascript">
-function submitEmail(){
-  var body = document.getElementById('message').value;
-  var name = document.getElementById('name').value;
-  var email = document.getElementById('email').value;
-  var href = "mailto:" + address + "?"
-         + "subject=Email-from-" + name "&"
-         + "body=" + body;
-var wndMail;
-wndMail = window.open(href, "_blank", "scrollbars=yes,resizable=yes,width=10,height=10");
-if(wndMail)
-{
-    wndMail.close();    
-}
-}
-</script>
-
 <noscript>
 	<link rel="stylesheet" href="css/skel-noscript.css" />
 	<link rel="stylesheet" href="css/style.css" />

@@ -100,6 +100,21 @@
 	// skelJS
 		skel.init(_settings.skelJS);
 
+function submitEmail(){
+  var body = document.getElementById('message').value;
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var href = "mailto:" + address + "?"
+         + "subject=Email-from-" + name "&"
+         + "body=" + body;
+var wndMail;
+wndMail = window.open(href, "_blank", "scrollbars=yes,resizable=yes,width=10,height=10");
+if(wndMail)
+{
+    wndMail.close();    
+}
+}
+
 	// jQuery
 		jQuery(function() {
 
